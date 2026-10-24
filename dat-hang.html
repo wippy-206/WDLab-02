@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bass Shop - Đặt Hàng Nhạc Cụ</title>
+</head>
+<body bgcolor="#F4F6F9" text="#222222">
+
+    <!-- Header & Navigation -->
+    <header>
+        <table width="100%" border="0" cellpadding="15" cellspacing="0" bgcolor="#2C3E50">
+            <tr>
+                <td width="20%" align="center">
+                    <img src="images/logo.png" alt="Logo thương hiệu Bass Shop" width="130">
+                </td>
+                <td width="80%">
+                    <h1><font color="#FFFFFF">BASS SHOP</font></h1>
+                    <p><font color="#BDC3C7">Đăng ký thông tin mua đàn &amp; Phụ kiện âm thanh trực tuyến</font></p>
+                </td>
+            </tr>
+        </table>
+
+        <nav>
+            <table width="100%" border="0" cellpadding="10" cellspacing="0" bgcolor="#34495E">
+                <tr align="center">
+                    <td><a href="index.html"><font color="#FFFFFF">Trang chủ</font></a></td>
+                    <td><a href="chi-tiet.html"><font color="#FFFFFF">Chi tiết sản phẩm</font></a></td>
+                    <td><a href="bang-gia.html"><font color="#FFFFFF">Bảng giá so sánh</font></a></td>
+                    <td><a href="dat-hang.html"><font color="#F39C12"><strong>Đặt hàng</strong></font></a></td>
+                </tr>
+            </table>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2 align="center"><font color="#2980B9">PHIẾU ĐĂNG KÝ ĐẶT HÀNG &amp; NHẬN BÁO GIÁ</font></h2>
+
+            <table width="70%" border="1" cellpadding="20" cellspacing="0" align="center" bgcolor="#FFFFFF" bordercolor="#BDC3C7">
+                <tr>
+                    <td>
+                        <!-- Form tĩnh chuyển hướng sang trang xac-nhan.html bằng phương thức GET để minh họa truyền dữ liệu -->
+                        <form action="xac-nhan.html" method="get">
+                            
+                            <!-- 1. Thông tin khách hàng -->
+                            <fieldset>
+                                <legend><strong>1. Thông tin khách hàng</strong></legend>
+                                <p>
+                                    <label for="customer-name">Họ và tên quý khách (*):</label><br>
+                                    <input type="text" id="customer-name" name="customer-name" size="45" placeholder="Ví dụ: Nguyễn Văn A" required>
+                                </p>
+                                <p>
+                                    <label for="customer-phone">Số điện thoại liên hệ (*):</label><br>
+                                    <input type="tel" id="customer-phone" name="customer-phone" size="45" placeholder="Ví dụ: 0903123456" required>
+                                </p>
+                                <p>
+                                    <label for="customer-email">Địa chỉ Email:</label><br>
+                                    <input type="email" id="customer-email" name="customer-email" size="45" placeholder="tenkhachhang@gmail.com">
+                                </p>
+                                <p>
+                                    <label for="customer-address">Địa chỉ giao hàng nhận đàn:</label><br>
+                                    <input type="text" id="customer-address" name="customer-address" size="55" placeholder="Số nhà, tên đường, phường/xã, quận/huyện...">
+                                </p>
+                            </fieldset>
+
+                            <br>
+
+                            <!-- 2. Lựa chọn sản phẩm & số lượng -->
+                            <fieldset>
+                                <legend><strong>2. Thông tin sản phẩm cần mua</strong></legend>
+                                <p>
+                                    <label for="product-select">Chọn dòng sản phẩm quan tâm (*):</label><br>
+                                    <select id="product-select" name="product-select" required>
+                                        <option value="">-- Vui lòng chọn 1 trong 10 sản phẩm --</option>
+                                        <optgroup label="Dòng Guitar Bass 4 Dây">
+                                            <option value="BASS4-01">Fender Player Jazz Bass - 19.200.000 VNĐ</option>
+                                            <option value="BASS4-02">Fender Player Precision Bass - 18.500.000 VNĐ</option>
+                                            <option value="BASS4-03">Ibanez Gio GSR200 - 6.500.000 VNĐ</option>
+                                            <option value="BASS4-04">Yamaha TRBX 304 - 8.900.000 VNĐ</option>
+                                        </optgroup>
+                                        <optgroup label="Dòng Guitar Bass 5 Dây">
+                                            <option value="BASS5-05">Yamaha TRBX 505 (5 Dây) - 14.500.000 VNĐ</option>
+                                            <option value="BASS5-06">Ibanez SR305E (5 Dây) - 9.800.000 VNĐ</option>
+                                            <option value="BASS5-07">Sire Marcus Miller V7 (5 Dây) - 16.900.000 VNĐ</option>
+                                        </optgroup>
+                                        <optgroup label="Amplifiers &amp; Phụ Kiện">
+                                            <option value="ACC-08">Ampli Fender Rumble 40 - 6.200.000 VNĐ</option>
+                                            <option value="ACC-09">Bộ Dây D'Addario EXL165 - 550.000 VNĐ</option>
+                                            <option value="ACC-10">Dây Cáp Fender Deluxe 3M - 480.000 VNĐ</option>
+                                        </optgroup>
+                                    </select>
+                                </p>
+
+                                <p>
+                                    <label for="product-quantity">Số lượng đặt (*):</label><br>
+                                    <input type="number" id="product-quantity" name="product-quantity" min="1" max="10" value="1" required>
+                                </p>
+
+                                <p>
+                                    <strong>Gói combo phụ kiện đi kèm ưu đãi:</strong><br>
+                                    <input type="checkbox" id="opt-bag" name="addons" value="bag">
+                                    <label for="opt-bag">Bao da đệm mút 3 lớp chống sốc (+ 350.000 VNĐ)</label><br>
+                                    
+                                    <input type="checkbox" id="opt-setup" name="addons" value="setup">
+                                    <label for="opt-setup">Dịch vụ cân chỉnh cần &amp; độ cao phím (Action) theo tay bấm (Miễn phí)</label><br>
+
+                                    <input type="checkbox" id="opt-strap" name="addons" value="strap">
+                                    <label for="opt-strap">Dây đeo da bản to chống mỏi vai (+ 250.000 VNĐ)</label>
+                                </p>
+
+                                <p>
+                                    <strong>Hình thức thanh toán dự kiến:</strong><br>
+                                    <input type="radio" id="pay-cod" name="payment-method" value="cod" checked>
+                                    <label for="pay-cod">Thanh toán tiền mặt khi nhận hàng (COD)</label><br>
+
+                                    <input type="radio" id="pay-bank" name="payment-method" value="bank">
+                                    <label for="pay-bank">Chuyển khoản ngân hàng qua mã QR</label>
+                                </p>
+                            </fieldset>
+
+                            <br>
+
+                            <!-- 3. Ghi chú thêm -->
+                            <fieldset>
+                                <legend><strong>3. Ghi chú yêu cầu đặc biệt</strong></legend>
+                                <p>
+                                    <label for="order-notes">Ghi chú về thời gian nhận hàng hoặc căn chỉnh âm sắc:</label><br>
+                                    <textarea id="order-notes" name="order-notes" rows="4" cols="50" placeholder="Ví dụ: Cần chỉnh action thấp để đánh slap, giao hàng sau 17h..."></textarea>
+                                </p>
+                            </fieldset>
+
+                            <br>
+
+                            <p align="center">
+                                <button type="submit"><strong>Xác nhận gửi đơn đặt hàng</strong></button>
+                                &nbsp;&nbsp;&nbsp;
+                                <button type="reset">Nhập lại từ đầu</button>
+                            </p>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <br>
+    </main>
+
+    <!-- Footer -->
+    <footer bgcolor="#2C3E50">
+        <table width="100%" border="0" cellpadding="15" cellspacing="0" bgcolor="#2C3E50">
+            <tr>
+                <td width="50%">
+                    <p><font color="#FFFFFF"><strong>BASS SHOP</strong></font></p>
+                    <p><font color="#BDC3C7">Cam kết 100% nhạc cụ chính hãng - Bảo hành 12 tháng</font></p>
+                </td>
+                <td width="50%" align="right">
+                    <p><font color="#BDC3C7">&copy; 2026 Bass Shop. All rights reserved.</font></p>
+                    <p><a href="index.html"><font color="#F39C12">Quay về trang chủ</font></a></p>
+                </td>
+            </tr>
+        </table>
+    </footer>
+
+</body>
+</html>
